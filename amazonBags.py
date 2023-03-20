@@ -10,7 +10,8 @@ soup = BeautifulSoup(html_page.content, "html.parser")
 with open("bags.csv","a") as csv_file:
     try:
         csv_writer=csv.writer(csv_file)
-        # csv_writer.writerow(['URL','Name','Price','Rating','No_of_reviews','Asin'])
+        #uncomment the below line if you want new csv file
+        # csv_writer.writerow(['URL','Name','Price','Rating','No_of_reviews','Asin'])  
         bags = soup.find_all(
             "div", class_="s-card-container s-overflow-hidden aok-relative puis-include-content-margin puis s-latency-cf-section s-card-border")[1::]
         # print(len(bags))
